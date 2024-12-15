@@ -1,5 +1,5 @@
 export async function getMessageById(id: number): Promise<Message[]> {
-    const request = await fetch(`http://localhost:7070/messages?from=${id}`, {
+    const request = await fetch(`https://react-lifcyclehttp-backend.onrender.com/messages?from=${id}`, {
         method: 'GET'
     })
     const data = await request.json()

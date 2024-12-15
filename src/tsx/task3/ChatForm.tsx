@@ -12,7 +12,7 @@ export function ChatForm({userId, messageId, getResponse}: {userId: string, mess
         e.preventDefault()
         setLoading(true)
         try {
-            await fetch(' http://localhost:7070/messages', {
+            await fetch('https://react-lifcyclehttp-backend.onrender.com/messages', {
             method: 'POST',
             body: JSON.stringify(
                 {
