@@ -1,0 +1,348 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 13px;
+}
+
+.clock-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock-block {
+  margin-top: 15px;
+}
+
+.clock-block ul {
+  list-style-type: none;
+}
+
+.clock-info {
+  position: relative;
+}
+
+.grid-block {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 25px;
+  grid-auto-rows: auto;
+}
+
+.clock-title {
+  font-size: 1.7rem
+}
+
+.clock-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: url(../svg/close.svg);
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid black;
+  background-image: url(../img/clock.png);
+  background-position: center;
+  background-size: cover;
+  margin-top: 5px;
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 7px);
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50px;
+  background-color: black;
+  z-index: 2;
+}
+
+.second {
+  width: 1px;
+  height: 80px;
+  position: absolute;
+  left: calc(50% - 1px);
+  top: calc(50% - 80px);
+  background-color: red;
+  transform-origin: 50% 80px;
+}
+
+.minute {
+  width: 2px;
+  height: 70px;
+  position: absolute;
+  right: calc(50% - 1px);
+  top: calc(50% - 70px);
+  background-color: black;
+  transform-origin: 50% 70px;
+}
+
+.minute::before {
+  content: '';
+  display: block;
+  border-width: 0 5px 10px 5px;
+  border-style: solid;
+  border-color: black;
+  border-color: transparent transparent black transparent;
+  transform: translate(-4px, -4px);
+}
+
+.hour {
+  width: 2px;
+  height: 60px;
+  position: absolute;
+  left: calc(50% - 1px);
+  top: calc(50% - 60px);
+  background-color: black;
+  transform-origin: 50% 60px;
+}
+
+.hour::before {
+  content: '';
+  display: block;
+  border-width: 0 5px 10px 5px;
+  border-style: solid;
+  border-color: black;
+  border-color: transparent transparent black transparent;
+  transform: translate(-4px, -4px);
+}
+
+.form-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.form-submit {
+  padding: 5px;
+}
+
+.form-input {
+  padding: 5px;
+}
+
+.item-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.items-block {
+  width: 100%;
+}
+
+.items-block ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.item {
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  width: 300px;
+  position: relative;
+  min-height: 50px
+}
+
+.item-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  right: -15px;
+  background-image: url(../svg/close.svg);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.item-text {
+  font-size: 14px
+}
+
+.sform-block {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.sform-title {
+  font-size: 2rem;
+  position: relative;
+}
+
+.sform-input {
+  resize: none;
+  width: 100%;
+  height: 200px;
+  padding: 5px;
+}
+
+.sform-submit {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 10px;
+  right: 10px;
+  background-image: url(../svg/add.svg);
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.sform-update {
+  width: 50px;
+  height: 50px;
+  background-image: url(../svg/update.svg);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.sform-head {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.chat-window {
+  width: 70%;
+  height: 500px;
+  border: 1px solid #000000;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(90deg, #030a68,#558bd1);
+  border-radius: 10px;
+  position: relative;
+}
+
+.messages {
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px rgb(104, 102, 102);
+}
+
+.message {
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: right;
+}
+
+.my-message {
+  align-items: flex-end;
+}
+
+.message-text {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.message-input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.loading {
+  width: 100%;
+  z-index: 5;
+  position: relative
+}
+
+.loading-text {
+  display: inline-block;
+  background-color: rgb(211 211 211 / 60%);
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+}
+
+.message-input input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.task {
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: #c9c9c9;
+}
+
+.t3 {
+  display: flex;
+  justify-content: center;
+}
